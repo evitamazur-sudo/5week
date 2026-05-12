@@ -127,43 +127,40 @@ ul, ol {
     from { opacity: 0; transform: translateX(-50px); }
     to { opacity: 1; transform: translateX(0); }
 }
-/* Background image area with parallax effect */
+/* Обнуляем возможные помехи */
+.origin-image, .origin-image__textbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Растягиваем на всю ширину */
+    clear: both; /* Убираем влияние соседних элементов */
+}
+
+/* Блок с фоном */
 .origin-image {
     height: 400px;
-    background-image: url('https://img.freepik.com/premium-vector/vector-background-with-seamless-cheese-pattern_845119-887.jpg');
+    background-image: url('https://i.pinimg.com/736x/bf/24/09/bf2409fecd973c1a4891b797160f1ea8.jpg'); 
     background-attachment: fixed; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Semitransparent button link */
+/* Кнопка */
 .btn-link {
+    display: inline-block; /* Чтобы отступы работали корректно */
     text-decoration: none;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 15px 30px;
-    font-size: 20px;
     border: 2px solid white;
     transition: 0.3s;
 }
 
-/* Hover state */
-.btn-link:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
-}
-
-/* Text box area below the image */
+/* Текстовый блок снизу */
 .origin-image__textbox {
     background-color: #f4f4f4;
-    padding: 50px 20px;
+    padding: 50px 0; /* Отступы сверху и снизу */
     text-align: center;
-}
-
-.origin-image__textbox h2 {
-    margin-bottom: 20px;
 }
